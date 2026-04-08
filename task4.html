@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Portfolio</title>
+
+<style>
+    body {
+        font-family: Arial;
+        margin: 0;
+        background: #0f172a;
+        color: #e5e7eb;
+    }
+    header {
+        background: #020617;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 2px solid #38bdf8;
+    }
+    h1 { color: #38bdf8; }
+
+    .container {
+        max-width: 900px;
+        margin: 30px auto;
+        padding: 20px;
+    }
+
+    button {
+        padding: 10px 15px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+    }
+
+    #aboutBox {
+        padding: 15px;
+        border-left: 4px solid #38bdf8;
+        margin-top: 15px;
+        border-radius: 10px;
+    }
+
+    .project {
+        background: #020617;
+        margin: 10px 0;
+        padding: 15px;
+        border-radius: 10px;
+        border-left: 4px solid #fbbf24;
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border-radius: 6px;
+        border: none;
+    }
+</style>
+
+</head>
+<body>
+
+<header>
+    <h1>My Portfolio</h1>
+    <p>Web Developer | Designer | Learner</p>
+</header>
+
+<div class="container">
+
+    <h2>About Me</h2>
+    <button id="showAboutBtn">Click to Show About Info</button>
+
+    <div id="aboutBox" style="display:none;">
+        I am passionate about Web Development and love working with HTML, CSS and JavaScript.
+    </div>
+
+    <h2>Projects</h2>
+
+    <div class="project" onmouseover="highlight(this)" onmouseout="removeHighlight(this)">
+        Student Management System
+    </div>
+
+    <div class="project" onmouseover="highlight(this)" onmouseout="removeHighlight(this)">
+        Online Bus Booking Interface
+    </div>
+
+    <h2>Contact Me</h2>
+
+    <form id="contactForm">
+        <label>Name</label>
+        <input type="text" id="name">
+
+        <label>Message</label>
+        <textarea id="message"></textarea>
+
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+</div>
+
+<script>
+
+// CLICK EVENT
+document.getElementById("showAboutBtn").addEventListener("click", function() {
+    const box = document.getElementById("aboutBox");
+    box.style.display = (box.style.display === "none") ? "block" : "none";
+});
+
+// MOUSE EVENTS
+function highlight(box) {
+    box.style.background = "#1e293b";
+}
+function removeHighlight(box) {
+    box.style.background = "#020617";
+}
+
+// FORM SUBMIT EVENT
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // stop page reload
+    const name = document.getElementById("name").value.trim();
+    const msg = document.getElementById("message").value.trim();
+
+    if (name === "" || msg === "") {
+        alert("Please fill all fields");
+        return;
+    }
+
+    alert("Thank you, " + name + "! Your message has been received.");
+});
+
+</script>
+
+</body>
+</html>

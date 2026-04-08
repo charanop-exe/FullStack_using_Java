@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Retrieval & Sorting Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Student / Employee Dashboard</h1>
+
+    <div class="controls">
+        <label>Sort By:</label>
+        <select id="sortSelect">
+            <option value="name">Name</option>
+            <option value="date">Date</option>
+        </select>
+
+        <label>Filter by Department:</label>
+        <select id="deptFilter">
+            <option value="All">All</option>
+            <option value="IT">IT</option>
+            <option value="HR">HR</option>
+            <option value="Finance">Finance</option>
+        </select>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+    </table>
+
+    <h2>Count per Department</h2>
+    <ul id="countList"></ul>
+
+    <script src="script.js"></script>
+</body>
+</html>

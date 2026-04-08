@@ -1,0 +1,47 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #eef2f7;
+  padding: 30px;
+}
+
+form {
+  background: white;
+  max-width: 450px;
+  margin: auto;
+  padding: 25px;
+  border-radius: 8px;
+}
+
+h2 {
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 6px;
+}
+
+.inline input {
+  width: auto;
+  margin-right: 5px;
+}
+
+button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+}
+
+button:hover {
+  background: #0056b3;
+}

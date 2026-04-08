@@ -1,0 +1,219 @@
+#Create Database
+CREATE DATABASE school;
+#creating table student s
+CREATE TABLE students(
+    -> id INT PRIMARY KEY,
+    -> name VARCHAR(100),
+    -> email VARCHAR(100),
+    -> Phone VARCHAR(100),
+    -> Department VARCHAR(50)
+    -> );
+Query OK, 0 rows affected (0.025 sec)
+#creating course table
+CREATE TABLE Course(
+    -> Course_code VARCHAR(100) PRIMARY KEY,
+    -> Course_name VARCHAR(100),
+    -> Faculty_id INT,
+    -> Student_ID INT,
+    -> Faculty_email VARCHAR(100),
+    -> FOREIGN KEY (Student_ID) REFERENCES students(id)
+    -> );
+Query OK, 0 rows affected (0.041 sec)
+# inserting values
+INSERT INTO students VALUES
+    -> (1,'Yamini','yamini3366@gmail.com','8688080364','CSE'),
+    -> (2,'SaiKrishna','saikrishnapathi515@gmail.com','8688468615','CSE'),
+    -> (3,'Harshini','harshini15@gmail.com','8673265615','ECE'),
+    -> (4,'bhumika','bhoomika715@gmail.com','8673254455','EEE'),
+    -> (5,'sindhu','sindhu88@gmail.com','7245455865','IT');
+Query OK, 5 rows affected (0.013 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+INSERT INTO Course VALUES
+    -> ('CS101','OPERATING SYSTEM',101,1,'prof_smith@vtu.edu'),
+    -> ('CS102','WEB AND MOBILE APPLICATION DEVELOPMENT',102,2,'prof_jones@vtu.edu'),
+    -> ('CS103','DATABASE MANAGEMENT',101,3,'prof_smith@vtu.edu'),
+    -> ('EC301','DIGITAL ELECTRONICS',103,4,'prof_kumar@vtu.edu'),
+    -> ('CS201','DATA STRUCTURES',104,5,'prof_leila@vtu.edu');
+Query OK, 5 rows affected (0.010 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+# viewing tables
+ SELECT* FROM students;
++----+------------+------------------------------+------------+------------+
+| id | name       | email                        | Phone      | Department |
++----+------------+------------------------------+------------+------------+
+|  1 | Yamini     | yamini3366@gmail.com         | 8688080364 | CSE        |
+|  2 | SaiKrishna | saikrishnapathi515@gmail.com | 8688468615 | CSE        |
+|  3 | Harshini   | harshini15@gmail.com         | 8673265615 | ECE        |
+|  4 | bhumika    | bhoomika715@gmail.com        | 8673254455 | EEE        |
+|  5 | sindhu     | sindhu88@gmail.com           | 7245455865 | IT         |
++----+------------+------------------------------+------------+------------+
+5 rows in set (0.001 sec)
+SELECT*FROM Course;
++-------------+----------------------------------------+------------+------------+--------------------+
+| Course_code | Course_name                            | Faculty_id | Student_ID | Faculty_email      |
++-------------+----------------------------------------+------------+------------+--------------------+
+| CS101       | OPERATING SYSTEM                       |        101 |          1 | prof_smith@vtu.edu |
+| CS102       | WEB AND MOBILE APPLICATION DEVELOPMENT |        102 |          2 | prof_jones@vtu.edu |
+| CS103       | DATABASE MANAGEMENT                    |        101 |          3 | prof_smith@vtu.edu |
+| CS201       | DATA STRUCTURES                        |        104 |          5 | prof_leila@vtu.edu |
+| EC301       | DIGITAL ELECTRONICS                    |        103 |          4 | prof_kumar@vtu.edu |
++-------------+----------------------------------------+------------+------------+--------------------+
+5 rows in set (0.001 sec)
+# using SELECT queries
+ SELECT*FROM students WHERE Department='CSE';
++----+------------+------------------------------+------------+------------+
+| id | name       | email                        | Phone      | Department |
++----+------------+------------------------------+------------+------------+
+|  1 | Yamini     | yamini3366@gmail.com         | 8688080364 | CSE        |
+|  2 | SaiKrishna | saikrishnapathi515@gmail.com | 8688468615 | CSE        |
++----+------------+------------------------------+------------+------------+
+2 rows in set (0.001 sec)
+
+SELECT*FROM Course ORDER BY Course_name ASC;
++-------------+----------------------------------------+------------+------------+--------------------+
+| Course_code | Course_name                            | Faculty_id | Student_ID | Faculty_email      |
++-------------+----------------------------------------+------------+------------+--------------------+
+| CS201       | DATA STRUCTURES                        |        104 |          5 | prof_leila@vtu.edu |
+| CS103       | DATABASE MANAGEMENT                    |        101 |          3 | prof_smith@vtu.edu |
+| EC301       | DIGITAL ELECTRONICS                    |        103 |          4 | prof_kumar@vtu.edu |
+| CS101       | OPERATING SYSTEM                       |        101 |          1 | prof_smith@vtu.edu |
+| CS102       | WEB AND MOBILE APPLICATION DEVELOPMENT |        102 |          2 | prof_jones@vtu.edu |
++-------------+----------------------------------------+------------+------------+--------------------+
+5 rows in set (0.001 sec)
+  
+SELECT name,email FROM students WHERE email like '%gmail.com';
++------------+------------------------------+
+| name       | email                        |
++------------+------------------------------+
+| Yamini     | yamini3366@gmail.com         |
+| SaiKrishna | saikrishnapathi515@gmail.com |
+| Harshini   | harshini15@gmail.com         |
+| bhumika    | bhoomika715@gmail.com        |
+| sindhu     | sindhu88@gmail.com           |
++------------+------------------------------+
+5 rows in set (0.001 sec)
+  
+SELECT*FROM students LIMIT 3;
++----+------------+------------------------------+------------+------------+
+| id | name       | email                        | Phone      | Department |
++----+------------+------------------------------+------------+------------+
+|  1 | Yamini     | yamini3366@gmail.com         | 8688080364 | CSE        |
+|  2 | SaiKrishna | saikrishnapathi515@gmail.com | 8688468615 | CSE        |
+|  3 | Harshini   | harshini15@gmail.com         | 8673265615 | ECE        |
++----+------------+------------------------------+------------+------------+
+3 rows in set (0.001 sec)
+ SELECT Department,COUNT(*) as Total_Students
+    -> FROM students
+    -> GROUP BY Department
+    -> HAVING COUNT(*)>1;
++------------+----------------+
+| Department | Total_Students |
++------------+----------------+
+| CSE        |              2 |
++------------+----------------+
+1 row in set (0.001 sec)
+
+SELECT COUNT(*) AS Total_Students FROM students;
++----------------+
+| Total_Students |
++----------------+
+|              5 |
++----------------+
+1 row in set (0.001 sec)
+
+SELECT COUNT(DISTINCT Department) AS Department_Count FROM students;
++------------------+
+| Department_Count |
++------------------+
+|                4 |
++------------------+
+1 row in set (0.001 sec)
+#JOIN QUERIES
+#INNER JOIN
+SELECT s.id,s.name AS Student_Name,c.Course_name,c.Faculty_id,c.Faculty_email FROM students s INNER JOIN Course c ON s.id=c.Student_ID;
++----+--------------+----------------------------------------+------------+--------------------+
+| id | Student_Name | Course_name                            | Faculty_id | Faculty_email      |
++----+--------------+----------------------------------------+------------+--------------------+
+|  1 | Yamini       | OPERATING SYSTEM                       |        101 | prof_smith@vtu.edu |
+|  2 | SaiKrishna   | WEB AND MOBILE APPLICATION DEVELOPMENT |        102 | prof_jones@vtu.edu |
+|  3 | Harshini     | DATABASE MANAGEMENT                    |        101 | prof_smith@vtu.edu |
+|  5 | sindhu       | DATA STRUCTURES                        |        104 | prof_leila@vtu.edu |
+|  4 | bhumika      | DIGITAL ELECTRONICS                    |        103 | prof_kumar@vtu.edu |
++----+--------------+----------------------------------------+------------+--------------------+
+5 rows in set (0.001 sec)
+#LEFT JOIN
+ SELECT s.id,s.name AS Student_Name,c.Course_name FROM students s LEFT JOIN Course c ON s.id=c.Student_ID;
++----+--------------+----------------------------------------+
+| id | Student_Name | Course_name                            |
++----+--------------+----------------------------------------+
+|  1 | Yamini       | OPERATING SYSTEM                       |
+|  2 | SaiKrishna   | WEB AND MOBILE APPLICATION DEVELOPMENT |
+|  3 | Harshini     | DATABASE MANAGEMENT                    |
+|  5 | sindhu       | DATA STRUCTURES                        |
+|  4 | bhumika      | DIGITAL ELECTRONICS                    |
++----+--------------+----------------------------------------+
+5 rows in set (0.001 sec)
+#RIGHT JOIN
+SELECT s.id,s.name AS Student_Name,c.Course_name FROM students s RIGHT JOIN Course c ON s.id=c.Student_ID;
++------+--------------+----------------------------------------+
+| id   | Student_Name | Course_name                            |
++------+--------------+----------------------------------------+
+|    1 | Yamini       | OPERATING SYSTEM                       |
+|    2 | SaiKrishna   | WEB AND MOBILE APPLICATION DEVELOPMENT |
+|    3 | Harshini     | DATABASE MANAGEMENT                    |
+|    5 | sindhu       | DATA STRUCTURES                        |
+|    4 | bhumika      | DIGITAL ELECTRONICS                    |
++------+--------------+----------------------------------------+
+5 rows in set (0.001 sec)
+#FULL JOIN
+ SELECT s.id, s.name AS Student_Name, c.Course_name
+    -> FROM students s
+    -> LEFT JOIN Course c ON s.id = c.Student_ID
+    ->
+    -> UNION
+    ->
+    -> SELECT s.id, s.name AS Student_Name, c.Course_name
+    -> FROM students s
+    -> RIGHT JOIN Course c ON s.id = c.Student_ID;
++------+--------------+----------------------------------------+
+| id   | Student_Name | Course_name                            |
++------+--------------+----------------------------------------+
+|    1 | Yamini       | OPERATING SYSTEM                       |
+|    2 | SaiKrishna   | WEB AND MOBILE APPLICATION DEVELOPMENT |
+|    3 | Harshini     | DATABASE MANAGEMENT                    |
+|    5 | sindhu       | DATA STRUCTURES                        |
+|    4 | bhumika      | DIGITAL ELECTRONICS                    |
++------+--------------+----------------------------------------+
+5 rows in set (0.002 sec)
+#CROSS JOIN
+SELECT s.name,c.Course_name FROM students s CROSS JOIN Course c;
++------------+----------------------------------------+
+| name       | Course_name                            |
++------------+----------------------------------------+
+| Yamini     | OPERATING SYSTEM                       |
+| SaiKrishna | OPERATING SYSTEM                       |
+| Harshini   | OPERATING SYSTEM                       |
+| bhumika    | OPERATING SYSTEM                       |
+| sindhu     | OPERATING SYSTEM                       |
+| Yamini     | WEB AND MOBILE APPLICATION DEVELOPMENT |
+| SaiKrishna | WEB AND MOBILE APPLICATION DEVELOPMENT |
+| Harshini   | WEB AND MOBILE APPLICATION DEVELOPMENT |
+| bhumika    | WEB AND MOBILE APPLICATION DEVELOPMENT |
+| sindhu     | WEB AND MOBILE APPLICATION DEVELOPMENT |
+| Yamini     | DATABASE MANAGEMENT                    |
+| SaiKrishna | DATABASE MANAGEMENT                    |
+| Harshini   | DATABASE MANAGEMENT                    |
+| bhumika    | DATABASE MANAGEMENT                    |
+| sindhu     | DATABASE MANAGEMENT                    |
+| Yamini     | DATA STRUCTURES                        |
+| SaiKrishna | DATA STRUCTURES                        |
+| Harshini   | DATA STRUCTURES                        |
+| bhumika    | DATA STRUCTURES                        |
+| sindhu     | DATA STRUCTURES                        |
+| Yamini     | DIGITAL ELECTRONICS                    |
+| SaiKrishna | DIGITAL ELECTRONICS                    |
+| Harshini   | DIGITAL ELECTRONICS                    |
+| bhumika    | DIGITAL ELECTRONICS                    |
+| sindhu     | DIGITAL ELECTRONICS                    |
++------------+----------------------------------------+
+25 rows in set (0.001 sec)

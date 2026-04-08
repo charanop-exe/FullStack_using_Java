@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #1e293b;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 15px;
+}
+
+.post {
+    background: white;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+video, audio {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.controls {
+    margin-top: 10px;
+}
+
+.controls button {
+    padding: 8px 15px;
+    margin-right: 5px;
+    border: none;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.controls button:hover {
+    background: #1d4ed8;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #e5e7eb;
+}

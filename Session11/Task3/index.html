@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E-Commerce Filter UI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>E-Shop</h1>
+</header>
+
+<div class="container">
+
+    <!-- Filters -->
+    <aside>
+        <h3>Filters</h3>
+
+        <!-- Price -->
+        <label>Price (₹)</label>
+        <input type="range" id="price" min="0" max="5000" value="5000">
+        <span id="priceValue">Up to ₹5000</span>
+
+        <!-- Brand -->
+        <label>Brand</label>
+        <select id="brand">
+            <option value="all">All</option>
+            <option value="Nike">Nike</option>
+            <option value="Adidas">Adidas</option>
+            <option value="Puma">Puma</option>
+        </select>
+
+        <!-- Color -->
+        <label>Color</label>
+        <div class="colors">
+            <input type="checkbox" value="red"> Red
+            <input type="checkbox" value="blue"> Blue
+            <input type="checkbox" value="black"> Black
+        </div>
+
+        <!-- Rating -->
+        <label>Rating</label>
+        <select id="rating">
+            <option value="0">All</option>
+            <option value="4">4★ & above</option>
+            <option value="3">3★ & above</option>
+        </select>
+
+        <button onclick="applyFilters()">Apply Filters</button>
+    </aside>
+
+    <!-- Products -->
+    <main id="productList"></main>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

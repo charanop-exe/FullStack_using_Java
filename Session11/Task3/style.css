@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f5f5f5;
+}
+
+/* Header */
+header {
+    background: #0f172a;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+/* Layout */
+.container {
+    display: flex;
+    padding: 20px;
+}
+
+/* Sidebar */
+aside {
+    width: 250px;
+    background: white;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+aside label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+aside button {
+    margin-top: 20px;
+    padding: 8px;
+    width: 100%;
+    background: #0f172a;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Products */
+main {
+    flex: 1;
+    margin-left: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+/* Product Card */
+.product {
+    background: white;
+    padding: 15px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.product h4 {
+    margin: 10px 0;
+}
+
+.product span {
+    font-size: 14px;
+    color: #555;
+}

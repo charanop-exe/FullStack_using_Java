@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tantraz Registration</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<form id="tantrazForm">
+  <h2>Tantraz Registration</h2>
+
+  <!-- Full Name -->
+  <label for="fullname">Full Name</label>
+  <input type="text" id="fullname" name="fullname" required>
+
+  <!-- Email -->
+  <label for="email">Email Address</label>
+  <input type="email" id="email" name="email" required>
+
+  <!-- Participation Category -->
+  <label for="category">Participation Category</label>
+  <select id="category" name="category" required>
+    <option value="">-- Select Category --</option>
+    <option value="Individual">Individual</option>
+    <option value="Team">Team</option>
+    <option value="Audience">Audience</option>
+  </select>
+
+  <!-- T-Shirt Size -->
+  <label>T-Shirt Size</label>
+  <div class="inline">
+    <input type="radio" name="size" value="S" required> S
+    <input type="radio" name="size" value="M"> M
+    <input type="radio" name="size" value="L"> L
+    <input type="radio" name="size" value="XL"> XL
+  </div>
+
+  <!-- Technical Interests -->
+  <label>Technical Interests</label>
+  <div class="inline">
+    <input type="checkbox" value="AI"> AI
+    <input type="checkbox" value="Web"> Web Dev
+    <input type="checkbox" value="Cloud"> Cloud Computing
+  </div>
+
+  <!-- Expectations -->
+  <label for="expectations">Expectations / Suggestions</label>
+  <textarea id="expectations" rows="4"></textarea>
+
+  <button type="submit">Register</button>
+</form>
+
+<script src="script.js"></script>
+</body>
+</html>

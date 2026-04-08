@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Media Blog Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>🎧 Media Blog</h1>
+    <p>Read • Watch • Listen</p>
+</header>
+
+<main class="container">
+
+    <!-- Blog Post -->
+    <section class="post">
+        <h2>Understanding Web Media</h2>
+        <p>
+            Modern blogs combine text with audio and video to improve user engagement.
+            Below is a demo of integrated media playback.
+        </p>
+
+        <!-- Video Player -->
+        <h3>📺 Video</h3>
+        <video id="videoPlayer" controls>
+            <source src="sample-video.mp4" type="video/mp4">
+            Your browser does not support video.
+        </video>
+
+        <!-- Audio Player -->
+        <h3>🎵 Audio</h3>
+        <audio id="audioPlayer" controls>
+            <source src="sample-audio.mp3" type="audio/mpeg">
+            Your browser does not support audio.
+        </audio>
+
+        <!-- Custom Controls -->
+        <div class="controls">
+            <button onclick="playMedia()">Play</button>
+            <button onclick="pauseMedia()">Pause</button>
+            <button onclick="stopMedia()">Stop</button>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 Media Blog Platform</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

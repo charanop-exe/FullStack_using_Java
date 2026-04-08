@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f2f2f2;
+}
+
+/* Header */
+header {
+    background: #1e293b;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header button {
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+/* Layout */
+.wrapper {
+    display: flex;
+}
+
+/* Fixed Sidebar */
+aside {
+    width: 220px;
+    background: #334155;
+    color: white;
+    min-height: 100vh;
+    padding: 20px;
+    position: fixed;
+}
+
+aside nav a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin: 10px 0;
+}
+
+/* Main */
+main {
+    margin-left: 240px;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Grid Layout */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* List Layout (JS toggle) */
+.list-layout {
+    display: block;
+}
+
+article {
+    background: white;
+    padding: 20px;
+    border-radius: 6px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+}
+
+/* Footer */
+footer {
+    background: #1e293b;
+    color: white;
+    text-align: center;
+    padding: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    aside {
+        position: relative;
+        width: 100%;
+        min-height: auto;
+    }
+
+    main {
+        margin-left: 0;
+    }
+
+    .grid-layout {
+        grid-template-columns: 1fr;
+    }
+}

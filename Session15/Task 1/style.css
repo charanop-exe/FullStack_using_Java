@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: #111;
+    overflow: hidden;
+}
+
+/* Square box */
+#box {
+    width: 60px;
+    height: 60px;
+    background-color: cyan;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+}
+
+/* 👉 To make it a circle, uncomment below */
+/*
+#box {
+    border-radius: 50%;
+}
+*/
