@@ -1,0 +1,29 @@
+body {
+font-family: Arial;
+text-align: center;
+background: #f4f4f4;
+}
+.form {
+margin: 15px;
+}
+input {
+padding: 8px;
+margin: 5px;
+}
+button {
+padding: 8px 15px;
+background: blue;
+color: white;
+border: none;
+cursor: pointer;
+}
+button:hover {
+background: darkblue;
+}
+pre {
+background: white;
+padding: 10px;
+width: 60%;
+margin: auto;
+text-align: left;
+}

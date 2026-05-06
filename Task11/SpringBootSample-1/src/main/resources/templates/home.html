@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Employee Search</title>
+</head>
+<body>
+    <h2>Employee Management (Spring Boot)</h2>
+
+    <form th:action="@{/employee}" method="get">
+        Enter Employee Id:
+        <input type="number" name="id" required/>
+        <button type="submit">Search</button>
+    </form>
+
+    <p>Try IDs: 101, 102, 103</p>
+</body>
+</html>

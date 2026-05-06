@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Feedback Form</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+<h2> Customer Feedback</h2>
+<form id="feedbackForm">
+<input type="text" id="name" placeholder="Your Name" required>
+<span class="error" id="nameError"></span>
+<input type="email" id="email" placeholder="Your Email" required>
+<span class="error" id="emailError"></span>
+<textarea id="message" placeholder="Your Feedback" required></textarea>
+<span class="error" id="msgError"></span>
+<button type="button" id="submitBtn">Submit</button>
+</form>
+<p id="successMsg"></p>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

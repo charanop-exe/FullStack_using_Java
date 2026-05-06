@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Payment Simulation</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+<h2>Online Payment</h2>
+<select id="user" onchange="updateBalances()"></select>
+<select id="merchant" onchange="updateBalances()"></select>
+<input type="number" id="amount" placeholder="Enter amount">
+<button onclick="pay()">Pay</button>
+<h3 id="userBalance"></h3>
+<h3 id="merchantBalance"></h3>
+<p id="result"></p>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

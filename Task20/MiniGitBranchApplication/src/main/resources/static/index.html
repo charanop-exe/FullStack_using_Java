@@ -1,0 +1,23 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<title>Mini Git Branching</title> 
+<link rel="stylesheet" href="style.css"> 
+</head> 
+<body> 
+<div class="container"> 
+    <h2>Mini Git Branching</h2> 
+    <input id="branchName" placeholder="New Branch Name"> 
+    <button onclick="createBranch()">Create Branch</button> 
+    <input id="message" placeholder="Commit Message"> 
+    <button onclick="commit()">Commit</button> 
+    <button onclick="merge()">Merge</button> 
+    <button onclick="rebase()">Rebase</button> 
+    <h3>Branches</h3> 
+    <ul id="branches"></ul> 
+    <h3>History</h3> 
+    <ul id="history"></ul> 
+</div> 
+<script src="script.js"></script> 
+</body> 
+</html>

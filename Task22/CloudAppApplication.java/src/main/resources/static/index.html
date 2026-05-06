@@ -1,0 +1,25 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<title>Cloud Comparison</title> 
+<link rel="stylesheet" href="style.css"> 
+</head> 
+<body> 
+<div class="container"> 
+    <h2>Cloud Service Comparison</h2> 
+    <select id="provider" onchange="loadData()"> 
+        <option value="aws">AWS</option> 
+        <option value="gcp">GCP</option> 
+        <option value="azure">Azure</option> 
+    </select> 
+    <h3>Services</h3> 
+    <ul id="services"></ul> 
+    <h3>Pricing Calculator</h3> 
+    <input id="hours" placeholder="Compute Hours"> 
+    <input id="storage" placeholder="Storage (GB)"> 
+    <button onclick="calculate()">Calculate Cost</button> 
+    <h3 id="result"></h3> 
+</div> 
+<script src="script.js"></script> 
+</body> 
+</html>

@@ -1,0 +1,21 @@
+body { 
+    font-family: Arial; 
+    background: #1e1e2f; 
+    color: white; 
+    display:flex; 
+    justify-content:center; 
+    align-items:center; 
+    height:100vh; 
+} 
+.container { 
+    text-align:center; 
+} 
+input, button { 
+    margin: 5px; 
+    padding: 8px; 
+} 
+li { 
+    background: #333; 
+    margin: 5px; 
+    padding: 5px; 
+}

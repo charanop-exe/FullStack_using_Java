@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Order Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- NAVBAR -->
+<div class="navbar">
+<h2>Order Management</h2>
+<a href="index.html">
+<button class="logout-btn">Logout</button>
+</a>
+</div>
+<h1>Order Management Dashboard</h1>
+<!-- CARDS SECTION -->
+<div class="grid">
+<!-- Add Customer -->
+<div class="card">
+<h3>Add Customer</h3>
+<input id="cname" placeholder="Customer Name">
+<input id="cemail" placeholder="Email">
+<button onclick="addCustomer()">Add Customer</button>
+</div>
+<!-- Add Product -->
+<div class="card">
+<h3>Add Product</h3>
+<input id="pname" placeholder="Product Name">
+<input id="pprice" placeholder="Price">
+<button onclick="addProduct()">Add Product</button>
+</div>
+<!-- Place Order -->
+<div class="card">
+<h3>Place Order</h3>
+<select id="customerSelect">
+<option value="">Select Customer</option>
+</select>
+<select id="productSelect">
+<option value="">Select Product</option>
+</select>
+<input id="qty" placeholder="Quantity">
+<button onclick="placeOrder()">Place Order</button>
+</div>
+</div>
+<!-- ACTION BUTTONS -->
+<div class="actions">
+<button onclick="loadOrders()">Order History</button>
+<button onclick="highestOrder()">Highest Order</button>
+<button onclick="activeCustomer()">Most Active Customer</button>
+</div>
+<!-- RESULT AREA -->
+<div id="result"></div>
+<script src="script.js"></script>
+</body>
+</html>

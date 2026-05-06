@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Factorial Calculator</title>
+</head>
+<body>
+
+<h2>Factorial Calculator</h2>
+
+<form th:action="@{/calculate}" method="post">
+    <input type="number" name="number" required>
+    <button type="submit">Calculate</button>
+</form>
+
+<p th:if="${result != null}"
+   th:text="'The factorial of ' + ${number} + ' is ' + ${result}">
+</p>
+
+</body>
+</html>

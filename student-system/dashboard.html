@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Dashboard</title>
+<link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+<div class="container">
+<button onclick="goHome()" class="home-btn">Home</button>
+<h1>Student Dashboard</h1>
+<div class="controls">
+<select id="sortSelect">
+<option value="">Sort By</option>
+<option value="name">Name</option>
+<option value="dob">Date of Birth</option>
+</select>
+<select id="departmentFilter">
+<option value="">Filter by Department</option>
+<option value="CSE">CSE</option>
+<option value="IT">IT</option>
+<option value="ECE">ECE</option>
+<option value="MECH">MECH</option>
+</select>
+<button onclick="loadStudents()">Apply</button>
+</div>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Email</th>
+<th>DOB</th>
+<th>Department</th>
+<th>Phone</th>
+</tr>
+</thead>
+<tbody id="studentTable"></tbody>
+</table>
+<h2>Department Count</h2>
+<div id="deptCount"></div>
+</div>
+<script src="dashboard.js"></script>
+<script>
+function goHome(){
+window.location.href = "index.html"
+}
+</script>
+</body>
+</html>

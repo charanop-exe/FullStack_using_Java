@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Students</title>
+</head>
+<body>
+
+<h2>Add Student</h2>
+
+<h3>Total Students: <span th:text="${totalEntries}"></span></h3>
+
+<form th:action="@{/saveStudent}" th:object="${student}" method="post">
+
+Name:
+<input type="text" th:field="*{name}">
+<span th:errors="*{name}"></span>
+<br><br>
+
+Email:
+<input type="text" th:field="*{email}">
+<span th:errors="*{email}"></span>
+<br><br>
+
+Phone:
+<input type="text" th:field="*{phoneNumber}" maxlength="10">
+<span th:errors="*{phoneNumber}"></span>
+<br><br>
+
+Address:
+<input type="text" th:field="*{address}" maxlength="25">
+<span th:errors="*{address}"></span>
+<br><br>
+
+<button type="submit">Save</button>
+
+</form>
+
+<hr>
+
+<h2>Student List</h2>
+
+<table border="1">
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Email</th>
+<th>Phone</th>
+<th>Address</th>
+<th>Actions</th>
+</tr>
+
+<tr th:each="s : ${students}">
+<td th:text="${s.id}"></td>
+<td th:text="${s.name}"></td>
+<td th:text="${s.email}"></td>
+<td th:text="${s.phoneNumber}"></td>
+<td th:text="${s.address}"></td>
+<td>
+<a th:href="@{/edit/{id}(id=${s.id})}">Edit</a>
+<a th:href="@{/delete/{id}(id=${s.id})}">Delete</a>
+</td>
+</tr>
+
+</table>
+
+</body>
+</html>

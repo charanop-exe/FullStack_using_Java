@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Employee Audit System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h2>Employee Management</h2>
+<div class="form">
+<input type="number" id="emp_id" placeholder="Employee ID">
+<input type="text" id="name" placeholder="Name">
+<input type="number" id="salary" placeholder="Salary">
+<button onclick="addEmployee()">Add</button>
+</div>
+<div class="form">
+<input type="number" id="update_id" placeholder="Employee ID">
+<input type="number" id="new_salary" placeholder="New Salary">
+<button onclick="updateEmployee()">Update</button>
+</div>
+<button onclick="loadLogs()">View Logs</button>
+<button onclick="loadReport()">View Daily Report</button>
+<h3>Output</h3>
+<pre id="output"></pre>
+<script src="script.js"></script>
+</body>
+</html>

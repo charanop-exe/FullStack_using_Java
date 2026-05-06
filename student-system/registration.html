@@ -1,0 +1,33 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<title>Student Registration</title> 
+<link rel="stylesheet" href="style.css"> 
+</head> 
+<body> 
+<div class="container"> 
+<h1>Student Registration</h1> 
+<button onclick="goHome()" class="home-btn">Home</button> 
+<form id="studentForm"> 
+<label>Name</label> 
+<input type="text" id="name" placeholder="Enter your name" required> 
+<label>Email</label> 
+<input type="email" id="email" placeholder="Enter your email" required> 
+<label>Date of Birth</label> 
+<input type="date" id="dob" required> 
+<label>Department</label> 
+<select id="department" required> 
+<option value="">Select Department</option> 
+<option>CSE</option> 
+<option>IT</option> 
+<option>ECE</option> 
+<option>MECH</option> 
+</select> 
+<label>Phone</label> 
+<input type="text" id="phone" placeholder="Enter phone number" required> 
+<button type="submit">Register</button> 
+</form> 
+</div> 
+<script src="script.js"></script> 
+</body> 
+</html>

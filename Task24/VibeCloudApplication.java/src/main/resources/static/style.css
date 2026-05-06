@@ -1,0 +1,32 @@
+body { 
+    font-family: Arial; 
+    background: #b98bdb; 
+    color: white; 
+    display:flex; 
+    justify-content:center; 
+    align-items:center; 
+    height:100vh; 
+} 
+.container { 
+    width: 400px; 
+    text-align: center; 
+} 
+textarea { 
+    width: 100%; 
+    height: 100px; 
+} 
+button { 
+    padding: 10px; 
+    margin: 10px; 
+    background: #00c6ff; 
+    border: none; 
+} 
+pre { 
+    background: #333; 
+    padding: 10px; 
+} 
+li { 
+    background: #444; 
+    margin: 5px; 
+    padding: 5px; 
+}
